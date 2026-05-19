@@ -1,16 +1,48 @@
-# React + Vite
+## React Shopping Cart Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive Shopping Cart application built using React, React Router, Context API, and Bootstrap.
 
-Currently, two official plugins are available:
+--> This project allows users to:-
+  - View products
+  - Add items to cart
+  - Update quantity
+  - Remove products
+  - View total cart amount
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- Product Listing
+- Add to Cart
+- Remove from Cart
+- Update Product Quantity
+- Dynamic Total Price
+- React Context API for State Management
+- React Router for Navigation
+- Responsive UI using Bootstrap
 
-## React Compiler
+## Technologies Used
+- React.js
+- React Router DOM
+- Context API
+- Bootstrap 
+- JavaScript 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Cart Functionality:- The cart state is managed globally using Context API.
+- CartContext Handles:
+   - Add product
+   - Remove product
+   - Update quantity
+   - Calculate total amount
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Workflow
+- The application starts from main.jsx and renders App.jsx.
+- CartProvider wraps the entire application to provide global cart state using React Context API.
+- BrowserRouter handles navigation between the Home page and Cart page.
+- The Home page displays products using ProductList and ProductCard components.
+- When the user clicks Add to Cart, the addToCart() function adds the product to the cart or increases its quantity if   it already exists.
+- Cart data is managed globally using Context API and accessed using the custom useCart() hook.
+- The Cart page displays all selected products, quantity, subtotal, and total price.
+- Users can:
+    -> Update product quantity using updateQty()
+    -> Remove products using removeFormCart()
+- The total cart amount is calculated dynamically using the reduce() method.
+- Whenever cart data changes, React automatically re-renders the updated UI without refreshing the page.
